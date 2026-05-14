@@ -1,11 +1,13 @@
 # 🏨 Hotel Management System
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python" />
-  <img src="https://img.shields.io/badge/Django-5.x-green?style=for-the-badge&logo=django" />
-  <img src="https://img.shields.io/badge/MySQL-8.0-orange?style=for-the-badge&logo=mysql" />
-  <img src="https://img.shields.io/badge/Bootstrap-5-purple?style=for-the-badge&logo=bootstrap" />
-  <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Django-5.x-092E20?style=for-the-badge&logo=django&logoColor=white" />
+  <img src="https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/Bootstrap-5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" />
 </p>
 
 <p align="center">
@@ -113,18 +115,6 @@ The project includes a cleaned `hotel.sql` file containing the core table:
 - Total Amount
 - Payment Status
 - Booking Status
-
----
-
-## 🖼️ Screenshots
-
-> Add screenshots in a `screenshots/` folder and reference them below.
-
-```markdown
-![Home Page](screenshots/home.png)
-![Booking Page](screenshots/booking.png)
-![Admin Dashboard](screenshots/dashboard.png)
-```
 
 ---
 
