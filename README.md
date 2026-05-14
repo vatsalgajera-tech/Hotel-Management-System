@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  A full-featured Hotel Management System built with Django and MySQL for managing room bookings, payments, and hotel administration.
+  A Hotel Management System built with Django and MySQL for managing room bookings, payments, and hotel administration.
 </p>
 
 ---
@@ -54,12 +54,9 @@ This project demonstrates practical experience with:
 
 ## 🛠️ Tech Stack
 
-| Category | Technologies |
-|--------|--------|
-| Frontend | HTML5, CSS3, Bootstrap, JavaScript |
-| Backend | Python, Django |
-| Database | MySQL |
-| Tools | Git, GitHub, VS Code, phpMyAdmin |
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,django,mysql,html,css,js,bootstrap,git,github,vscode" />
+</p>
 
 ---
 
