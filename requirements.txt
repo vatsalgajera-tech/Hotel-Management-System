@@ -1,0 +1,4 @@
+Django>=5.1.0
+mysqlclient>=2.2.0
+xhtml2pdf>=0.2.11
+django-extensions>=3.2.3
