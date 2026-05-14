@@ -1,0 +1,35 @@
+from django.urls import path
+from . import views 
+from django.contrib.auth import views as auth_views
+
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('service/', views.service, name='service'),
+    path('room/', views.room, name='room'),
+    path('about/', views.about, name='about'),
+    path('contact/', views.contact, name='contact'),
+    path('booking/', views.booking, name='booking'), 
+    path('login/', views.login, name='login'), 
+    path('login/', auth_views.LogoutView.as_view(next_page='login'), name='logout'), 
+    path('dashboard/', views.dashboard, name='dashboard'),
+    path('edit-profile/', views.editprofile, name='editprofile'),
+    path('room-requests/', views.roomreq, name='roomreq'),
+    path('manage-requests/', views.managereq, name='managereq'),
+    path('payments/', views.payment, name='payment'),
+    path('accepted/', views.accepted, name='accepted'),
+    path('mark_as_paid/', views.mark_as_paid, name='mark_as_paid'),
+    path('accept-booking/<int:booking_id>/', views.accept_booking, name='accept_booking'),
+    path('delete-booking/<int:booking_id>/', views.delete_booking, name='delete_booking'),
+    path('download-bill/<int:booking_id>/', views.download_bill, name='download_bill'),
+    path('reject_booking/<int:booking_id>/', views.reject_booking, name='reject_booking'),    
+    path("user-login/", views.userlogin, name="userlogin"),
+    path("user-register/", views.userregister, name="userregister"),
+    path("user-home/", views.userhome, name="userhome"),
+    path("user-profile/", views.userprofile, name="userprofile"),
+    path("contact-us/", views.usercontact, name="usercontact"),
+    path("your-bookings/", views.userbooking, name="userbooking"),
+    path("booking-requests/", views.userreq, name="userreq"),
+    path("logout/", views.userlogout, name="userlogout"),
+    path('delete-user/<int:user_id>/', views.delete_user, name="delete_user"),
+    path("user-details/", views.details, name="details"),
+]

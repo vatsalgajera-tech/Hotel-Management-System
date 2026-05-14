@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+        rel="stylesheet"
+    >
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'HotelApp/css/style.css' %}">
+
+    <style>
+        .dashboard-summary .card {
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        .dashboard-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .ww{
+            font-size:30px;
+            font-weight:bold;
+        }
+        html {
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    {% include 'HotelApp/nav.html' %}
+    
+    <!-- Dashboard Summary Cards -->
+    <div class="container mt-4">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <div class="card text-white bg-success mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Revenue Collected Till Date</h5>
+                        <p class="card-text ww">₹ {{ total_amount_sum }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-dark mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Pending Requests</h5>
+                        <p class="card-text ww">{{ pending_requests_count }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-dark mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Accepted Requests</h5>
+                        <p class="card-text ww">{{ accepted_requests_count }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-dark mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Rooms</h5>
+                        <p class="card-text ww"> 60 </p>
+                    </div>
+                </div>
+            </div>            
+            <div class="col-md-3">
+                <div class="card text-white bg-danger mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Deluxe Room</h5>
+                        <p class="card-text ww">₹ 2000</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-danger mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Superior Room</h5>
+                        <p class="card-text ww"> ₹ 5000</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-danger mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Exclusive Room</h5>
+                        <p class="card-text ww"> ₹ 8000 </p>
+                    </div>
+                </div>
+            </div>        
+            <div class="col-md-3">
+                <div class="card text-white bg-danger mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Luxury Room</h5>
+                        <p class="card-text ww"> ₹ 10000 </p>
+                    </div>
+                </div>
+            </div> 
+            <div class="col-md-6">
+                <div class="card text-white bg-warning mb-3">
+                    <div class="card-body">
+                        <div class="column">
+                            <img src="{% static 'HotelApp/images/img30.jpg' %}" alt="1" height="150px" width="500px">
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="col-md-6">
+                <div class="card text-white bg-warning mb-3">
+                    <div class="card-body">
+                        <div class="column">
+                            <img src="{% static 'HotelApp/images/hotel.jpg' %}" alt="1" height="150px" width="500px">
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

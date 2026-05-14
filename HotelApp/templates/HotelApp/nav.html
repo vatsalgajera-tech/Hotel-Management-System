@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'HotelApp/css/style.css' %}">
+    <style>
+        body {
+            font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:rgb(241, 241, 241);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        /* Admin Section (Left Side) */
+        .admin-section {
+            font-weight: bold;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Navbar Links (Right Side) */
+        .nav-links {
+            display: flex;
+            align-items: center; 
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 18px;
+            display: block;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            border-radius: 40px;
+            color: yellow;
+        }
+
+        /* Dashboard Content */
+        .dashboard-container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .z {
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+        }
+
+        .qq{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar sticky-top">
+        <div class="admin-section">
+            <a href="{% url 'dashboard' %}" class="z">CV HOTEL</a>
+        </div>
+        <div class="nav-links">
+            <a href="{% url 'dashboard' %}">Dashboard</a><span class="qq">|</span>
+            <a href="{% url 'roomreq' %}">Room Requests</a><span class="qq">|</span>
+            <a href="{% url 'accepted' %}">Accepted Requests</a><span class="qq">|</span>
+            <a href="{% url 'managereq' %}">Manage Requests</a><span class="qq">|</span>
+            <a href="{% url 'payment' %}">Payment Details</a><span class="qq">|</span>
+            <a href="{% url 'details' %}">User Details</a><span class="qq">|</span>
+            <a href="{% url 'editprofile' %}">Profile</a><span class="qq">|</span>
+            <a href="{% url 'logout' %}">Log Out</a>
+        </div>
+    </div>
+
+</body>
+</html>

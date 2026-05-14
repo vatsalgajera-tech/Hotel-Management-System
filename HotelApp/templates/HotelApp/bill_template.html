@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            padding: 15px;
+            max-width: 800px;            
+        }
+        table{
+            border:2px solid black;
+            padding:5px 0px 5px 0px;
+            font-size:23px;
+            margin:0px 40px;
+            text-align:center;
+        }
+        .total { 
+            font-weight: bold; 
+            color:rgb(9, 104, 5); 
+        }
+        .footer { 
+            font-size: 20px; 
+            padding-top: 10px; 
+            text-align: right; 
+            padding: 20px 0;
+        }
+        .header {  
+            text-align: right; 
+            padding: 10px 0;
+            margin-top:;
+        }
+        .a{
+            font-size:25px;
+        }
+        .xx{
+            font-size:30px;
+            font-weight:bold;
+            color:rgb(177, 20, 20); 
+        }
+        .qwe{
+            font-size:45px;
+            font-weight:bold;
+            color:rgb(5, 51, 65);
+        }
+        .po{
+            font-size:20px;
+            color:rgb(5, 51, 65);
+        }
+        .hh{
+            font-size:16px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <!-- Header with Hotel Logo and Contact Details -->
+    <div class="header xx">
+        <span class="qwe">Celestial View</span>
+        <span class="po">
+            <p>Jumeirah St - Umm Suqeim 3, Dubai,<br>United Arab Emirates<br>Email: info@celestialview.com<br>
+            Phone: +971 4 555 1234<br> </p>
+        </span>
+    
+    </div><br>
+
+    <!-- Guest Information -->
+     <div class="a">
+            <strong>Name           :</strong> {{ booking.first_name }} {{ booking.last_name }}<br>
+            <strong>Mobile Number  :</strong> {{ booking.mobile_number }}<br>
+            <strong>Email ID       :</strong> {{ booking.email_id }}<br>
+            <strong>Country        :</strong> {{ booking.country }}
+        
+     </div>
+<br>
+
+    <!-- Billing Details -->
+    <span class="xx">Billing Details</span>
+    <table>
+        <tr>
+            <th>Room Type</th>
+            <td>{{ booking.room_type }}</td>
+        </tr>
+        <tr>
+            <th>Check-in Date</th>
+            <td>{{ booking.check_in }}</td>
+        </tr>
+        <tr>
+            <th>Check-out Date</th>
+            <td>{{ booking.check_out }}</td>
+        </tr>
+        <tr>
+            <th>Total Amount</th>
+            <td class="total"> <span> INR. </span>{{ booking.total_amount }}</td>
+        </tr>
+    </table>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Thank you for choosing Celestial View. We look forward to welcoming you again!</p><br>
+        <span class="hh">Sign of Receptionist</span>
+    </div>
+
+</div>
+
+</body>
+</html>

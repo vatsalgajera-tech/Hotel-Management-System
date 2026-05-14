@@ -1,0 +1,200 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Booking</title>
+    <style>
+        body {
+            font-family: "Lucida Sans", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 50%;
+            margin: 20px auto;
+            background: white;
+            padding: 8px 50px 35px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        .p {
+            font-size: 35px;
+            margin-bottom: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 20px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .button {
+            font-family: "Lucida Sans", sans-serif;
+            width: 30%;
+            padding: 10px;
+            background: rgb(0, 189, 44);
+            color: white;
+            border: none;
+            font-size: 15px;
+            border-radius: 30px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .button:hover {
+            background: rgb(7, 109, 29);
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .row div {
+            width: 48%;
+        }
+
+        .a{
+            width: 30%;
+            padding: 10px 50px;
+            background: rgb(243, 4, 4);
+            color: white;
+            border: none;
+            font-size: 15px;
+            border-radius: 30px;
+            margin-top: 15px;
+            margin-left:130px;
+            margin-right:20px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration:none;
+        }
+        .a:hover {
+            background: rgb(145, 15, 15);
+        }
+
+        .ww{
+            background-color:#e9e9e9;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p class="p">Room Booking Form</p>
+    <form id="bookingForm" method="POST" onsubmit="submitForm(event)" action="{% url 'booking' %}">
+
+        {% csrf_token %}
+        <div class="row">
+            <div>
+                <label for="first_name">First Name:</label>
+                <input type="text" class="ww" id="first_name" name="first_name" value="{{ first_name }}" readonly>
+            </div>
+            <div>
+                <label for="last_name">Last Name:</label>
+                <input type="text" class="ww" id="last_name" name="last_name" value="{{ last_name }}" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="" selected disabled>-- Select Gender --</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div>
+                <label for="mobile_number">Mobile Number:</label>
+                <input type="text" id="mobile_number" name="mobile_number" maxLength="10" pattern="\d{10}" required title="Enter a 10-digit mobile number">
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <label for="email_id">Email ID:</label>
+                <input type="email" class="ww" id="email_id" name="email_id" value="{{ email_id }}" readonly>
+            </div>
+            <div>
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" required>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <label for="check_in">Check-in Date:</label>
+                <input type="date" id="check_in" name="check_in" required>
+            </div>
+            <div>
+                <label for="check_out">Check-out Date:</label>
+                <input type="date" id="check_out" name="check_out" required>
+            </div>
+        </div>
+        <label for="room_type">Room Type:</label>
+        <select id="room_type" name="room_type" onchange="updatePrice()" required>
+            <option value="" selected disabled>-- Select Room Type --</option>
+            <option value="Deluxe">Deluxe Room</option>
+            <option value="Superior">Superior Room</option>
+            <option value="Exclusive">Exclusive Room</option>
+            <option value="Luxury">Luxury Room</option>
+        </select>
+        <p id="price_display" style="font-weight:bold; color:green;">Price: 0 ₹ per night</p>
+        <input type="hidden" id="total_amount" name="total_amount">
+        <a class="a" href="{% url 'userbooking' %}">Back to Home</a>
+        <button type="submit" class="button">Submit Booking</button>
+    </form>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let today = new Date().toISOString().split('T')[0];
+        document.getElementById("check_in").setAttribute("min", today);
+        document.getElementById("check_out").setAttribute("min", today);
+        updatePrice();
+    });
+
+    function updatePrice() {
+        let roomType = document.getElementById("room_type").value;
+        let priceMapping = { "Deluxe": 2000, "Superior": 5000, "Exclusive": 8000, "Luxury": 10000 };
+        let pricePerNight = priceMapping[roomType] || 0;
+
+        let checkInDate = new Date(document.getElementById("check_in").value);
+        let checkOutDate = new Date(document.getElementById("check_out").value);
+        let stayDays = (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24);
+
+        stayDays = stayDays > 0 ? stayDays : 1;
+        let totalAmount = pricePerNight * stayDays;
+        
+        document.getElementById("price_display").innerText = `Total Price: ${totalAmount} ₹ (${pricePerNight} ₹ per night)`;
+        document.getElementById("total_amount").value = totalAmount;
+    }
+
+    function submitForm(event) {
+        event.preventDefault();
+        let formData = new FormData(document.getElementById("bookingForm"));
+        
+        fetch("{% url 'booking' %}", {  
+            method: "POST",
+            body: formData,
+            headers: {
+                "X-CSRFToken": document.querySelector("input[name='csrfmiddlewaretoken']").value
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert("Booking successful!");
+            } else {
+                alert("Error: " + (data.message || "Try again."));
+            }
+        })
+        .catch(() => alert("Server error. Try again later."));
+    }
+</script>
+</body>
+</html>
