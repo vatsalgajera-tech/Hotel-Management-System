@@ -229,12 +229,6 @@ Through this project, I gained hands-on experience with:
 
 ---
 
-## ⭐ Show Your Support
-
-If you found this project useful, please give it a ⭐ on GitHub.
-
----
-
 ## 📜 License
 
 This project is developed for educational and portfolio purposes.
