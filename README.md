@@ -223,12 +223,3 @@ Through this project, I gained hands-on experience with:
 
 ### Vatsal Gajera
 
-- GitHub: https://github.com/vatsalgajera-tech
-- LinkedIn: https://www.linkedin.com/in/vatsalgajera/
-- Email: vatsalgajera.tech@gmail.com
-
----
-
-## 📜 License
-
-This project is developed for educational and portfolio purposes.
