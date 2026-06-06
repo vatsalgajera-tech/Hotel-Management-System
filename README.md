@@ -1,5 +1,7 @@
 # 🏨 Hotel Management System
 
+> A Hotel Management System built with Django and MySQL for managing room bookings, payments, and hotel administration.
+
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/Django-5.x-092E20?style=for-the-badge&logo=django&logoColor=white" />
@@ -9,8 +11,6 @@
   <img src="https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
   <img src="https://img.shields.io/badge/Bootstrap-5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" />
 </p>
-
-> A Hotel Management System built with Django and MySQL for managing room bookings, payments, and hotel administration.
 
 ---
 
